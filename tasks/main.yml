@@ -1,0 +1,34 @@
+- name: "{{ rubygems_command }} environment"
+  command: "{{ rubygems_command }} environment"
+  register: rubygems_result
+
+- name: "{{ rubygems_command }} environment result parse"
+  set_fact:
+    rubygems_environment: "{{ rubygems_result.stdout | from_yaml }}"
+
+- name: show environment
+  debug: var=rubygems_environment
+
+- name: executable directory
+  set_fact:
+    rubygems_executable_directory: >-
+      {{
+         rubygems_environment["RubyGems Environment"]  |
+         selectattr("EXECUTABLE DIRECTORY", "defined") |
+         map(attribute="EXECUTABLE DIRECTORY")         |
+         first
+      }}
+
+- name: show executable directory
+  debug: var=rubygems_executable_directory
+
+- name: executable path
+  set_fact:
+    rubygems_executable_path: "{{ rubygems_executable_directory }}/{{ rubygems_command }}"
+
+- name: show executable path
+  debug: var=rubygems_executable_path
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
