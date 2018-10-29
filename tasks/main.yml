@@ -24,7 +24,7 @@
 
 - name: executable path
   set_fact:
-    rubygems_executable_path: "{{ rubygems_executable_directory }}/{{ rubygems_command }}"
+    rubygems_executable_path: "{{ rubygems_executable_directory }}/{{ rubygems_command | basename }}"
 
 - name: show executable path
   debug: var=rubygems_executable_path
