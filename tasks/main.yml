@@ -8,6 +8,7 @@
 
 - name: show environment
   debug: var=rubygems_environment
+  when: rubygems_show_environment
 
 - name: executable directory
   set_fact:

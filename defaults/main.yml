@@ -1,4 +1,5 @@
 rubygems_command: gem
+rubygems_show_environment: false
 
 # Local Variables:
 # indent-tabs-mode: nil
