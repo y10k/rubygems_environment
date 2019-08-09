@@ -19,10 +19,10 @@ the `gem` command is different, it must be set in the
 Role Variables
 --------------
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-|`rubygems_command`|`gem`|rubygems command|
-|`rubygems_show_environment`|`false`|display contents of `rubygems_environment` fact on the console.|
+| Variable                  | Default | Description                                                   |
+|---------------------------|---------|---------------------------------------------------------------|
+|`rubygems_command`         |`gem`    |rubygems command                                               |
+|`rubygems_show_environment`|`false`  |display contents of `rubygems_environment` fact on the console.|
 
 Dependencies
 ------------
