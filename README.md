@@ -22,7 +22,7 @@ Role Variables
 | Variable                  | Default | Description                                                   |
 |---------------------------|---------|---------------------------------------------------------------|
 |`rubygems_command`         |`gem`    |rubygems command                                               |
-|`rubygems_show_environment`|`false`  |display contents of `rubygems_environment` fact on the console.|
+|`rubygems_environment_show`|`false`  |display contents of `rubygems_environment` fact on the console.|
 
 Dependencies
 ------------

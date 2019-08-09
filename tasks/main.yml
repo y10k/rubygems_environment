@@ -1,14 +1,14 @@
 - name: "{{ rubygems_command }} environment"
   command: "{{ rubygems_command }} environment"
-  register: rubygems_result
+  register: rubygems_environment_result
 
 - name: "{{ rubygems_command }} environment result parse"
   set_fact:
-    rubygems_environment: "{{ rubygems_result.stdout | from_yaml }}"
+    rubygems_environment: "{{ rubygems_environment_result.stdout | from_yaml }}"
 
 - name: show environment
   debug: var=rubygems_environment
-  when: rubygems_show_environment
+  when: rubygems_environment_show
 
 - name: executable directory
   set_fact:
